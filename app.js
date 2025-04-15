@@ -7,12 +7,27 @@ window.onload = function(){
         let text = li.textAll;
         let check = li.checkAll;
         const Items = document.createElement('li');
-        Items.innerHTML=`
-        <input type="text" placeholder="enter task" class="type" value= "${text}">
-        <input type="checkbox" class="check" onchange="doItems(this.parentElement)"${check ? 'checked' : ''} >
-        <button class="but" onclick="deleteitems(this.parentElement)"> <i class="fa-solid fa-trash" style="color: #ff0000;"></i> </button>
-        <button class="but" onclick="additems()"><i class="fa-solid fa-plus" style="color: #000000;"></i></button>
-        `;
+        if(check){
+            Items.innerHTML=`
+            <input type="text" placeholder="enter task" class="type" value= "${text}">
+            <input type="checkbox" class="check" onchange="doItems(this.parentElement)"${check ? 'checked' : ''} >
+            <button class="but" onclick="deleteitems(this.parentElement)"> <i class="fa-solid fa-trash" style="color: #ff0000;"></i> </button>
+            <button class="but" onclick="additems()"><i class="fa-solid fa-plus" style="color: #000000;"></i></button>
+            `;
+            const modeElement = Items.querySelector('.type');
+            modeElement.classList.add('soft');
+            }
+        else {
+            Items.innerHTML=`
+            <input type="text" placeholder="enter task" class="type" value= "${text}">
+            <input type="checkbox" class="check" onchange="doItems(this.parentElement)"${check ? 'checked' : ''} >
+            <button class="but" onclick="deleteitems(this.parentElement)"> <i class="fa-solid fa-trash" style="color: #ff0000;"></i> </button>
+            <button class="but" onclick="additems()"><i class="fa-solid fa-plus" style="color: #000000;"></i></button>
+            `;
+            const modeElement = Items.querySelector('.type');
+            modeElement.classList.remove('soft');
+            }
+        
         menu.appendChild(Items);
     })
 }
