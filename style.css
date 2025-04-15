@@ -2,11 +2,8 @@
     padding: 0;
     margin: 0;
 }
-.bgbig{
-    width: 1920px;
-    height: 915px;
+body{
     background-color: antiquewhite;
-    position: fixed;
 }
 .bgsm{
     width: 750px;
@@ -62,4 +59,45 @@ li{
     border-radius: 20px;
     padding: 15px;
     opacity: 0.3;
+}
+@media(max-width:500px) {
+    .bgsm{
+        width: 300px;
+        height: 700px;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        flex-direction:column;
+        align-items: center;
+    }
+    .h1{
+        font-size: 25px;
+    }
+    .type{
+        margin-top: 20px;
+        height: 6px;
+        width: 150px;
+        border-radius: 20px;
+        padding: 15px;
+    }
+    .check{
+        width: 20px;
+        height: 20px;
+        margin-left: 10px;
+        margin-top: 30px;
+    }
+    .but{
+        width: 20px;
+        height: 20px;
+        margin-left: 10px;
+        margin-top: 30px;
+    }
+    .soft{
+        margin-top: 20px;
+        height: 6px;
+        width: 150px;
+        border-radius: 20px;
+        padding: 15px;
+        opacity: 0.3;
+    }
 }
